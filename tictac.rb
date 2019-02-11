@@ -1,43 +1,95 @@
-# class TicTacToe
-#   def switch
-#   end
-#
-#
-#   def play(location)
-#   end
-# end
-
-
+#GameBoard begins
 class GameBoard
-  row1 = [0, 0, 0]
-  row2 = [0, 0, 0]
-  row3 = [0, 0, 0]
-  $gameboard = "#{row1}\n#{row2}\n#{row3}"
-end
+  attr_reader :gameboard
+  def initialize
+    @gameboard = [
+      ['1', '2', '3'],
+      ['4', '5', '6'],
+      ['7', '8', '9']
+    ]
 
-class Player
-  @@count = 0
-  def initialize(name)
-    @name = name
-    @@count += 1
+  end
+
+  def print_board(board)
+    for i in 0..2
+      row[i].each {
+        |x|
+        print "[#{x}]"
+      }
+    end
+  end
+  # p = [1, 2]
+
+  # puts @gameboard[p[0]][p[1]]
+
+end
+#GameBoard ends
+
+
+
+
+#GameStart begins
+class GameStart
+
+  def initialize()
+    @gameboard = GameBoard.new()
+    @player1 = ""
+    @player2 = ""
+    @players = []
+    @switch = 0
   end
 
   def welcome
-    if @@count == 1
-      puts "Hi #{@name} welcome on board. You're the first player"
-    else
-      puts "Hello #{@name} good to have you on board too. You'll be the second player"
+    puts "Welcome to Tic Tac Toe"
+    puts "Name of first player: "
+    @player1 = gets.chomp
+    puts "Hello #{@player1} you're welcome on board. \n Now name of second player: "
+    @player2 = gets.chomp
+    @players.push(@player1)
+    @players.push(@player2)
+    puts "Awesome! #{@players[0]} and #{@players[1]} common let's play!"
+    puts "So this is an example of how the board looks. The different numbers correspond to different positions on the board."
+    puts $gameboard
+  end
+
+  def positions(num)
+    p = [nil, nil]
+    case num
+    when 1
+      p[0] = 0
+      p[1] = 0
+    when 2
+      p[0] = 0
+      p[1] = 1
+    when 3
+      p[0] = 0
+      p[1] = 2
+    when 4
+      p[0] = 1
+      p[1] = 0
+    when 5
+      p[0] = 1
+      p[1] = 1
+    when 6
+      p[0] = 1
+      p[1] = 2
+    when 7
+      p[0] = 2
+      p[1] = 0
+    when 8
+      p[0] = 2
+      p[1] = 1
+    when 9
+      p[0] = 2
+      p[1] = 2
     end
+    p
   end
 
-  def play(location)
-    location = "X"
+  def switch
   end
+
 end
+#GameStart ends
 
-
-player1 = Player.new("James")
-player1.welcome
-player2 = Player.new("Adnan")
-player2.welcome
-puts "\n#{$gameboard}"
+game = GameStart.new

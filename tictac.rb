@@ -23,11 +23,12 @@ class Player
   end
 
   def welcome
-    if @@count == 1
-      puts "Hi #{@name} welcome on board. You're the first player"
-    else
-      puts "Hello #{@name} good to have you on board too. You'll be the second player"
-    end
+    if @@count == 1 ? puts "Hi #{@name} welcome on board. You're the first player" : puts "Hello #{@name} good to have you on board too. You'll be the second player"
+    # if @@count == 1
+    #   puts "Hi #{@name} welcome on board. You're the first player"
+    # else
+    #   puts "Hello #{@name} good to have you on board too. You'll be the second player"
+    # end
   end
 
   def play(location)

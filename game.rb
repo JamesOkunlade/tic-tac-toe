@@ -49,7 +49,71 @@ class Game < Board
  end
 
 
+# PLAYER SELECTS POSITION ON THE BORD
+  def player_move
+    puts "ENTER YOUR SHOSEN LOCATION BETWEEN 1..9"
+    @position = gets.chomp.to_i
+  end
 
- 
+
+# DETERMINES IF MOVE IS VALID
+  def move_valid?
+    if @board[@position - 1] == "X" || @board[@position - 1] == "O"
+      @valid = false
+    elsif @position.to_i.between?(1, 9)
+      @valid = true
+    else
+      @valid = false
+    end
+  end
+
+  # DETERMINES THE WINNER
+  def determine_winer
+    @player = if @player1_turn
+                @player1
+
+
+              else
+                @player2
+
+              end
+
+  end
+
+
+  # DETERMINE WHO THE WINNER IS
+  def game_results
+    if @three_in_row
+      puts "THE WINNER IS #{@player}!!"
+    else
+      puts "ITS A DRAWW LOOSERS!!!"
+    end
+  end
+
+  # PROMPTS TO RESTART GAME
+  def play_again?
+    puts "WOULD YOU LIKE TO PLAY AGAIN?"
+    puts 'Y/N?'
+    response = gets.chomp
+    if response.upcase == 'Y'
+      @restart = true
+    else
+      @restart = false
+    end
+  end
+
+  # RESTARTS GAME
+  def restart_game
+    initialize
+    play_game
+  end
+
+  def end_game
+    puts "THANKS VERY MUCH FOR PLAYING "
+  end
 
 end
+
+puts "WELCOME TO TIC TAC TOE"
+a = Game.new
+a.play_game

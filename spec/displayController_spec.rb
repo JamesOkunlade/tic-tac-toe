@@ -1,6 +1,6 @@
-require './lib/board'
+require './lib/displayController.rb'
 
-RSpec.describe Board do
+RSpec.describe Controller do
 
 
   # describe '#get_player_intro' do

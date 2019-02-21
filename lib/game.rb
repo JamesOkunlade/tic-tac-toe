@@ -1,4 +1,4 @@
-require './board.rb'
+require_relative './board.rb'
 class Game < Board
   # STARTS GAME
  def play_game

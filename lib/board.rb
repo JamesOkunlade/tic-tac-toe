@@ -1,4 +1,4 @@
-require '../bin/displayController.rb'
+require_relative '../bin/displayController.rb'
 
 class Board < Controller
   def initialize()

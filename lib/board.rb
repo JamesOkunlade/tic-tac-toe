@@ -11,9 +11,6 @@ class Board < Controller
 
  end
 
- show_board 
-
-
 
 
 

@@ -1,6 +1,6 @@
 require_relative './board.rb'
 class Game < Board
-
+  attr_accessor :position
   # STARTS GAME
  def play_game
    wel_come
@@ -27,7 +27,7 @@ class Game < Board
    @restart ? restart_game : end_game
  end
 
- 
+
  # DETERMINES WHO'S TURN IT IS
  def determine_turn
    @player = if @player1_turn

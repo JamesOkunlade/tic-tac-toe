@@ -28,19 +28,19 @@ class Game < Board
  end
 
 
- # DETERMINES WHO'S TURN IT IS
- def determine_turn
-   @player = if @player1_turn
-               puts "It is #{@player1}'s turn"
-               "X"
-
-             else
-               puts "It is #{@player2}'s turn"
-               "O"
-
-             end
-
- end
+ # # DETERMINES WHO'S TURN IT IS
+ # def determine_turn
+ #   @player = if @player1_turn
+ #               puts "It is #{@player1}'s turn"
+ #               "X"
+ #
+ #             else
+ #               puts "It is #{@player2}'s turn"
+ #               "O"
+ #
+ #             end
+ #
+ # end
 
 
 
@@ -59,13 +59,9 @@ class Game < Board
   def determine_winer
     @player = if @player1_turn
                 @player1
-
-
               else
                 @player2
-
               end
-
   end
 
 

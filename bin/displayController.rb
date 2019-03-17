@@ -27,7 +27,7 @@ class Controller
     if @three_in_row
       puts "THE WINNER IS #{@player}!!"
     else
-      puts "ITS A DRAWW LOOSERS!!!"
+      puts "ITS A DRAW!!!"
     end
   end
 
@@ -64,6 +64,21 @@ class Controller
     puts ''
 
     puts "INVALID ENTRY, ENTER A NEW VALID POSITION" if @valid == false
+  end
+
+
+  # DETERMINES WHO'S TURN IT IS
+  def determine_turn
+    @player = if @player1_turn
+                puts "It is #{@player1}'s turn"
+                "X"
+
+              else
+                puts "It is #{@player2}'s turn"
+                "O"
+
+              end
+
   end
 
 

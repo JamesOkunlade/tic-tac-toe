@@ -42,5 +42,21 @@ RSpec.describe Game do
 
   end
 
+  describe 'win?' do
+    it "Checks all win combinations" do
+      game = Game.new
+      @three_in_row = true
+      expect(game.win?).to eq true
+    end
+  end
+
+  describe 'game_results' do
+    it "Determines if it a draw" do
+      game = Game.new
+      @three_in_row != true
+      expect(game.game_results).to eq "ITS A DRAW!!!"
+    end
+  end
+
 
 end

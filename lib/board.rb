@@ -1,6 +1,8 @@
-require '../bin/displayController.rb'
+require_relative '../bin/displayController.rb'
 
 class Board < Controller
+  attr_accessor :board, :player1_turn
+
   def initialize()
 
    @board = (1..9).to_a
